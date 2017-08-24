@@ -5,6 +5,7 @@ class ApiController < ApplicationController
   require 'json'
 
   def summoner
+    puts params
     summoner_data = RestClient.get("https://na1.api.riotgames.com/lol/summoner/v3/summoners/by-name/"+params["summoner"]+"?itemListData=all&api_key="+Rails.application.secrets.riot_api_key)
     summoner_data = JSON.parse(summoner_data)
     match_list_data = RestClient.get("https://na1.api.riotgames.com/lol/match/v3/matchlists/by-account/"+summoner_data['accountId'].to_s+"/recent?itemListData=all&api_key="+Rails.application.secrets.riot_api_key)
