@@ -10,6 +10,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'responders'
 gem 'rest-client'
 gem 'pg'
+gem 'rollbar'
 
 group :development, :test do
   gem 'byebug'
