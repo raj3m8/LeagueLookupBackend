@@ -75,8 +75,8 @@ class ApiController < ApplicationController
 
   def findSummonerSpells(participant)
     summoner_spells = []
-    summoner_spells.push(Api::SUMMONER_SPELLS_MAP.select { |x| x[:id] == participant['spell1Id'] }[0]['key'])
-    summoner_spells.push(Api::SUMMONER_SPELLS_MAP.select { |x| x[:id] == participant['spell2Id'] }[0]['key'])
+    summoner_spells.push(Api::SUMMONER_SPELLS_MAP.select { |x| x[:id] == participant['spell1Id'] }[0][:key])
+    summoner_spells.push(Api::SUMMONER_SPELLS_MAP.select { |x| x[:id] == participant['spell2Id'] }[0][:key])
     return summoner_spells
   end
 
