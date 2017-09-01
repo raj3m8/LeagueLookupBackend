@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   get 'summoner/:summoner' => 'api#summoner'
+  get '/', to: redirect('/index.html')
+  get '/riot.txt', to: redirect('/riot.txt')
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
